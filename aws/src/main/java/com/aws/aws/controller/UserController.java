@@ -24,7 +24,6 @@ public class UserController {
 	public List<User> getAllUserDetails(){
 		return userRepository.findAll();
 	}
-	
 	// get user by id
 	@GetMapping("/users/{userId}")
 	public User getSingleUserDetails(@PathVariable Long userId){
