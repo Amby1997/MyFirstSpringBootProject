@@ -41,6 +41,7 @@ public class UserController {
 	@PutMapping("/users/{userId}")
 	public User updateUserDetails(@RequestBody User user,@PathVariable Long userId){
 		User existing = userRepository.findById(userId).orElseThrow(()-> new ResourseNotFoundException("User not found with id: "+userId));
+		existing.setId(userId);
 		 existing.setEmail(user.getEmail());
 		 existing.setFname(user.getFname());
 		 existing.setLname(user.getLname());
